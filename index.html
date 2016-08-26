@@ -6,10 +6,11 @@
     <script src="app.js"></script>
   </head>
   <body ng-app="shlapperNews" ng-controller="MainCtrl">
-    <div>{{test}}</div>
+    <div><h3><strong>{{test}}</strong><h3></div>
     <div ng-repeat="post in posts | orderBy: '-upvotes'"> <!-- orderBy is one of Angular's built in filters  -->
+      <span ng-click="incrementUpvotes(post)"><button>^ </button></span>
       {{post.title}} - upvotes: {{post.upvotes}}
-    </div>
+    </div></br>
     <form ng-submit="addPost()">
       <input type="text" ng-model="title"></input>
       <button type="submit">Add a Post</button>
