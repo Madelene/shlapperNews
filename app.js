@@ -1,4 +1,5 @@
 angular.module('schlapperNews', [])
+
 .factory('posts', [function(){
   var o = {
     posts: []
@@ -8,7 +9,8 @@ angular.module('schlapperNews', [])
 
 .controller('MainCtrl', [
 '$scope',
-function($scope){
+'posts',
+function($scope, posts){
   $scope.test = "Maddie's first Angular app!"; // declares a variable called "test"
   $scope.posts = [  // new scope variable called "posts"
   {title: 'post 1', upvotes: 5},
@@ -32,6 +34,7 @@ function($scope){
  $scope.incrementUpvotes = function(post) {
    post.upvotes += 1;
  };
+
 }]);
 
 
